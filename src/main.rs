@@ -4,6 +4,8 @@
 mod hello_world;
 #[path = "./02-lucian-luscious-lasagna/main.rs"]
 mod lucian_luscious_lasagna;
+#[path = "./03-assembly-line/main.rs"]
+mod assembly_line;
 
 pub fn main() {
     let mut input = String::new();
@@ -14,6 +16,7 @@ pub fn main() {
     match input.trim() {
         "01" => println!("{}", crate::hello_world::main()),
         "02" => println!("{}", crate::lucian_luscious_lasagna::main()),
+        "03" => println!("{}", crate::assembly_line::main()),
         _ => {}
     }
 
