@@ -17,6 +17,6 @@ fn working_items_per_minute(speed: u8) -> u32 {
     (production_rate_per_hour(speed) / MINUTES_PER_HOURS).trunc() as u32
 }
 
-pub fn main() -> String {
-    working_items_per_minute(6).to_string()
+pub fn main() -> () {
+    println!("{}", working_items_per_minute(6).to_string());
 }

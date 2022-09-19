@@ -15,6 +15,6 @@ fn elapsed_time_in_minutes(layers: u32, minutes: u32) -> u32 {
         + preparation_time_in_minutes(layers)
 }
 
-pub fn main() -> String {
-    elapsed_time_in_minutes(3, 20).to_string()
+pub fn main() -> () {
+    println!("{}", elapsed_time_in_minutes(3, 20).to_string());
 }
