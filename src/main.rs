@@ -6,6 +6,8 @@ mod hello_world;
 mod lucian_luscious_lasagna;
 #[path = "./03-assembly-line/main.rs"]
 mod assembly_line;
+#[path = "./04-health-statistics/main.rs"]
+mod health_statistics;
 
 fn clear_terminal() {
     println!("{esc}[2J{esc}[1;1H", esc = 27 as char);
@@ -30,6 +32,7 @@ pub fn main() -> () {
         "01" => crate::hello_world::main(),
         "02" => crate::lucian_luscious_lasagna::main(),
         "03" => crate::assembly_line::main(),
+        "04" => crate::health_statistics::main(),
         _ => (),
     }
 
