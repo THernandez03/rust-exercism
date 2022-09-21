@@ -1,26 +1,34 @@
-#[derive(Clone, PartialEq, Debug)]
-
-pub enum LogLevel {
+#[derive(Debug)]
+enum LogLevel {
     Info,
     Warning,
     Error,
 }
 
-pub fn log(level: LogLevel, message: &str) -> String {
-    let level_tag: &str = match level {
-        LogLevel::Info => "INFO",
-        LogLevel::Warning => "WARNING",
-        LogLevel::Error => "ERROR",
-    };
-    format!("[{}]: {}", level_tag, message)
+impl LogLevel {
+    const INFO: &'static str = "INFO";
+    const WARNING: &'static str = "WARNING";
+    const ERROR: &'static str = "ERROR";
+
+    fn value(&self) -> &'static str {
+        match self {
+            LogLevel::Info => Self::INFO,
+            LogLevel::Warning => Self::WARNING,
+            LogLevel::Error => Self::ERROR,
+        }
+    }
 }
-pub fn info(message: &str) -> String {
+
+fn log(level: LogLevel, message: &str) -> String {
+    format!("[{}]: {}", LogLevel::value(&level), message)
+}
+fn info(message: &str) -> String {
     log(LogLevel::Info, message)
 }
-pub fn warn(message: &str) -> String {
+fn warn(message: &str) -> String {
     log(LogLevel::Warning, message)
 }
-pub fn error(message: &str) -> String {
+fn error(message: &str) -> String {
     log(LogLevel::Error, message)
 }
 
