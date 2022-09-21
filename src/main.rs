@@ -8,6 +8,8 @@ mod lucian_luscious_lasagna;
 mod assembly_line;
 #[path = "./04-health-statistics/main.rs"]
 mod health_statistics;
+#[path = "./05-semi-structured-logs/main.rs"]
+mod semi_structured_logs;
 
 fn clear_terminal() {
     println!("{esc}[2J{esc}[1;1H", esc = 27 as char);
@@ -33,6 +35,7 @@ pub fn main() -> () {
         "02" => crate::lucian_luscious_lasagna::main(),
         "03" => crate::assembly_line::main(),
         "04" => crate::health_statistics::main(),
+        "05" => crate::semi_structured_logs::main(),
         _ => (),
     }
 
