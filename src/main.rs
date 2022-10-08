@@ -10,8 +10,8 @@ mod assembly_line;
 mod health_statistics;
 #[path = "./05-semi-structured-logs/main.rs"]
 mod semi_structured_logs;
-#[path = "./06-start-sublist/main.rs"]
-mod start_sublist;
+#[path = "./06-sublist/main.rs"]
+mod sublist;
 
 fn clear_terminal() {
     println!("{esc}[2J{esc}[1;1H", esc = 27 as char);
@@ -38,7 +38,7 @@ pub fn main() -> () {
         "03" => crate::assembly_line::main(),
         "04" => crate::health_statistics::main(),
         "05" => crate::semi_structured_logs::main(),
-        "06" => crate::start_sublist::main(),
+        "06" => crate::sublist::main(),
         _ => (),
     }
 
