@@ -1,0 +1,2 @@
+- Add tests
+- Make the exercises more dynamic, let the user enter param values
