@@ -12,6 +12,8 @@ mod health_statistics;
 mod semi_structured_logs;
 #[path = "./06-sublist/main.rs"]
 mod sublist;
+#[path = "./07-poker/main.rs"]
+mod poker;
 
 fn clear_terminal() {
     println!("{esc}[2J{esc}[1;1H", esc = 27 as char);
@@ -39,6 +41,7 @@ pub fn main() -> () {
         "04" => crate::health_statistics::main(),
         "05" => crate::semi_structured_logs::main(),
         "06" => crate::sublist::main(),
+        "07" => crate::poker::main(),
         _ => (),
     }
 
